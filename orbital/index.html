@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>ORBITAL — The Knowledge Galaxy | Knowledge Has No Boundaries</title>
+  <meta name="title" content="ORBITAL — The Knowledge Galaxy">
+  <meta name="description" content="Explore an immersive digital learning universe where every subject is a world, every course is a mission, and every skill is a new destination. Knowledge has no boundaries.">
+
+  <!-- Favicon with Cosmic Orbit SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2302040a' stroke='%2300e5ff' stroke-width='3'/%3E%3Cellipse cx='50' cy='50' rx='42' ry='16' fill='none' stroke='%2338bdf8' stroke-width='2' stroke-dasharray='4 4' transform='rotate(-25 50 50)'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%23060b18' stroke='%2300e5ff' stroke-width='3'/%3E%3Ccircle cx='76' cy='36' r='6' fill='%2300e5ff'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Syne (Display), Space Grotesk (Tech Accent), Inter (Editorial Body), JetBrains Mono (Coordinates HUD) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY: Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to orbital missions</a>
+
+  <!-- ATMOSPHERIC COSMOS BACKDROP -->
+  <div class="cosmos-background" aria-hidden="true">
+    <div class="cosmos-stars-layer-1"></div>
+    <div class="cosmos-stars-layer-2"></div>
+    <div class="cosmos-nebula-glow glow-cyan"></div>
+    <div class="cosmos-nebula-glow glow-indigo"></div>
+    <div class="cosmos-nebula-glow glow-violet"></div>
+    <div class="cosmos-grid-lines"></div>
+  </div>
+
+  <!-- =========================================================================
+       GLOBAL NAVIGATION HEADER
+       ========================================================================= -->
+  <header id="orbital-header" class="orbital-header">
+    <div class="container header-container">
+      
+      <!-- Brand Emblem & Identity -->
+      <a href="#hero" class="orbital-brand" aria-label="ORBITAL Home">
+        <div class="brand-planet-emblem">
+          <div class="planet-core"></div>
+          <div class="planet-ring-1"></div>
+          <div class="planet-ring-2"></div>
+          <div class="planet-satellite"></div>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">ORBITAL</span>
+          <span class="brand-tag">KNOWLEDGE GALAXY</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#galaxy-map" class="nav-link"><span class="nav-idx">01</span> Galaxy Map</a></li>
+          <li><a href="#missions" class="nav-link"><span class="nav-idx">02</span> Missions</a></li>
+          <li><a href="#expeditions" class="nav-link"><span class="nav-idx">03</span> Expeditions</a></li>
+          <li><a href="#my-orbit" class="nav-link"><span class="nav-idx">04</span> My Orbit</a></li>
+          <li><a href="#achievements" class="nav-link"><span class="nav-idx">05</span> Achievements</a></li>
+          <li><a href="#philosophy" class="nav-link"><span class="nav-idx">06</span> Philosophy</a></li>
+        </ul>
+      </nav>
+
+      <!-- Telemetry Controls & Actions -->
+      <div class="header-actions">
+        <!-- Quick Mission Search Trigger -->
+        <button id="nav-search-trigger" class="btn-icon-nav" type="button" aria-label="Search missions" title="Search all missions">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Orbit Status Pill -->
+        <div class="telemetry-pill hide-mobile">
+          <span class="status-dot"></span>
+          <span class="pill-text">ORBIT // SYNCHRONIZED</span>
+        </div>
+
+        <!-- Demonstration Sign In Trigger -->
+        <button id="nav-login-btn" class="btn-ghost-nav" type="button">
+          <span>Enter Orbit</span>
+        </button>
+
+        <!-- Primary Launch Action -->
+        <a href="#galaxy-map" class="btn-primary-nav">
+          <span>Explore Galaxy</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobile-menu-toggle" class="mobile-toggle" type="button" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="toggle-line"></span>
+          <span class="toggle-line"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Scroll Progress Indicator Bar -->
+    <div id="scroll-progress-bar" class="scroll-progress-bar" aria-hidden="true"></div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="orbital-brand">
+          <div class="brand-planet-emblem">
+            <div class="planet-core"></div>
+            <div class="planet-ring-1"></div>
+          </div>
+          <span class="brand-title">ORBITAL</span>
+        </div>
+        <button id="drawer-close" class="drawer-close-btn" aria-label="Close navigation">&times;</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-links-list">
+          <li><a href="#hero" class="drawer-link"><span class="d-num">00</span> Flight Deck (Home)</a></li>
+          <li><a href="#galaxy-map" class="drawer-link"><span class="d-num">01</span> The Knowledge Galaxy</a></li>
+          <li><a href="#missions" class="drawer-link"><span class="d-num">02</span> Mission Control (Courses)</a></li>
+          <li><a href="#expeditions" class="drawer-link"><span class="d-num">03</span> Learning Expeditions</a></li>
+          <li><a href="#my-orbit" class="drawer-link"><span class="d-num">04</span> My Orbit Dashboard</a></li>
+          <li><a href="#achievements" class="drawer-link"><span class="d-num">05</span> Milestone Gallery</a></li>
+          <li><a href="#philosophy" class="drawer-link"><span class="d-num">06</span> The Philosophy</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="#missions" class="btn-primary-block drawer-action-btn">
+          <span>Launch Mission Control &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- =======================================================================
+         SECTION 1: OPENING EXPERIENCE — ENTER THE UNKNOWN (HERO)
+         ======================================================================= -->
+    <section id="hero" class="hero-section" aria-label="ORBITAL Flight Deck">
+      <!-- Atmospheric 3D-inspired Planet Graphic Canvas & CSS Rings -->
+      <div class="hero-planet-viewport" aria-hidden="true">
+        <div class="planet-celestial-sphere">
+          <div class="planet-atmosphere-glow"></div>
+          <div class="planet-surface-body">
+            <div class="planet-craters"></div>
+            <div class="planet-terminator-shadow"></div>
+          </div>
+          <div class="celestial-ring ring-primary"></div>
+          <div class="celestial-ring ring-secondary"></div>
+          <div class="celestial-ring ring-tertiary"></div>
+          <div class="orbital-beacon beacon-alpha"></div>
+          <div class="orbital-beacon beacon-beta"></div>
+          <div class="orbital-beacon beacon-gamma"></div>
+        </div>
+      </div>
+
+      <div class="container hero-container">
+        
+        <!-- Mission Status Pill -->
+        <div class="hero-pre-badge reveal-fade">
+          <span class="badge-pulse"></span>
+          <span class="badge-code">EXPEDITION PROTOCOL // 2026.04</span>
+          <span class="badge-sep">|</span>
+          <span class="badge-state">DESTINATIONS UNLOCKED</span>
+        </div>
+
+        <!-- Central Cinematic Editorial Typography -->
+        <div class="hero-typography-block">
+          <h1 class="hero-headline">
+            <span class="headline-part reveal-text" data-delay="100">
+              <span class="text-silver">Knowledge has</span>
+            </span>
+            <span class="headline-part reveal-text" data-delay="250">
+              <span class="text-electric">no boundaries.</span>
+            </span>
+          </h1>
+
+          <p class="hero-lead-text reveal-fade" data-delay="400">
+            Every discovery begins with curiosity. Explore new worlds of knowledge and turn what you learn into what you create.<br class="hide-mobile">
+            Learning is an exploration: every subject is a world, every course is a mission, and every skill is a new destination.
+          </p>
+
+          <!-- Exploration CTAs -->
+          <div class="hero-actions-row reveal-fade" data-delay="550">
+            <a href="#galaxy-map" class="btn-primary hero-btn">
+              <span class="btn-text">Begin Your Exploration</span>
+              <span class="btn-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#missions" class="btn-secondary hero-btn">
+              <span class="btn-text">Mission Control</span>
+              <span class="btn-icon">&darr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sector Coordinates Metrics Ticker -->
+        <div class="hero-telemetry-ticker reveal-fade" data-delay="700">
+          <div class="ticker-col">
+            <span class="ticker-val">5</span>
+            <span class="ticker-label">Galactic Sectors</span>
+          </div>
+          <div class="ticker-col">
+            <span class="ticker-val">24</span>
+            <span class="ticker-label">Knowledge Worlds</span>
+          </div>
+          <div class="ticker-col">
+            <span class="ticker-val">98.6%</span>
+            <span class="ticker-label">Orbit Completion</span>
+          </div>
+          <div class="ticker-col">
+            <span class="ticker-val">4.98 ★</span>
+            <span class="ticker-label">Pioneer Rating</span>
+          </div>
+        </div>
+
+        <!-- Descent Scroll Cue -->
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <div class="cue-mouse">
+            <span class="cue-wheel"></span>
+          </div>
+          <span class="cue-text">DESCENT VECTOR // SCROLL TO EXPLORE</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: THE KNOWLEDGE GALAXY — SIGNATURE FEATURE
+         ======================================================================= -->
+    <section id="galaxy-map" class="section galaxy-section" aria-label="Interactive Knowledge Galaxy">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-index">01</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-name">SIGNATURE EXPERIENCE</span>
+          </div>
+          <h2 class="section-title">The Knowledge Galaxy.</h2>
+          <p class="section-lead">
+            Every discipline in ORBITAL is mapped as an interconnected planetary destination revolving around our core singularity of curiosity. Select a destination to open its orbital dossier.
+          </p>
+        </div>
+
+        <!-- View Switcher (Orbital Map vs Accessible Tactical List) -->
+        <div class="galaxy-view-toggle-bar reveal-on-scroll">
+          <div class="toggle-hint">
+            <span class="hint-dot"></span>
+            <span>Click any planetary destination to chart courses</span>
+          </div>
+          <div class="view-switch-buttons" role="tablist" aria-label="Galaxy View Modes">
+            <button id="view-mode-map-btn" class="view-tab active" role="tab" aria-selected="true" aria-controls="galaxy-viewport">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span>Orbital Projection</span>
+            </button>
+            <button id="view-mode-list-btn" class="view-tab" role="tab" aria-selected="false" aria-controls="galaxy-list-view">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              <span>Tactical Index</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- PRIMARY INTERACTIVE GALAXY STAGE -->
+        <div class="galaxy-interface-wrapper reveal-on-scroll">
+
+          <!-- 1. Interactive Orbital SVG & DOM Map View -->
+          <div id="galaxy-viewport" class="galaxy-viewport" role="region" aria-label="Interactive Orbital Map">
+            
+            <!-- SVG Orbital Trajectories & Planetary Radii -->
+            <svg class="galaxy-orbital-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <defs>
+                <linearGradient id="orbitGlowCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#2563eb" stop-opacity="0.1"/>
+                </linearGradient>
+                <linearGradient id="orbitGlowViolet" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a855f7" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.1"/>
+                </linearGradient>
+                <radialGradient id="sunCoreGradient" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="35%" stop-color="#38bdf8"/>
+                  <stop offset="70%" stop-color="#0284c7"/>
+                  <stop offset="100%" stop-color="#02040a" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Orbital Trajectory Rings -->
+              <ellipse class="orbit-path orbit-1" cx="500" cy="350" rx="140" ry="85" />
+              <ellipse class="orbit-path orbit-2" cx="500" cy="350" rx="230" ry="140" />
+              <ellipse class="orbit-path orbit-3" cx="500" cy="350" rx="310" ry="190" />
+              <ellipse class="orbit-path orbit-4" cx="500" cy="350" rx="390" ry="240" />
+              <ellipse class="orbit-path orbit-5" cx="500" cy="350" rx="465" ry="290" />
+
+              <!-- Central Star: Singularity Core -->
+              <circle cx="500" cy="350" r="70" fill="url(#sunCoreGradient)" opacity="0.35"/>
+              <circle cx="500" cy="350" r="28" fill="#ffffff" filter="drop-shadow(0 0 20px #00e5ff)"/>
+              <circle cx="500" cy="350" r="14" fill="#00e5ff"/>
+            </svg>
+
+            <!-- Interactive Planetary Destination Nodes Layer -->
+            <div class="galaxy-destinations-layer" id="galaxy-destinations-layer">
+              
+              <!-- DESTINATION A: CODE GALAXY -->
+              <button class="planet-node active" data-galaxy="code" id="node-galaxy-code" type="button" style="left: 28%; top: 38%;" aria-label="Explore Code Galaxy">
+                <div class="planet-sphere sphere-code">
+                  <div class="planet-halo"></div>
+                  <div class="planet-ring"></div>
+                  <span class="planet-symbol">&lt;/&gt;</span>
+                </div>
+                <div class="planet-label-card">
+                  <span class="p-sector">SECTOR 01</span>
+                  <span class="p-name">Code Galaxy</span>
+                </div>
+              </button>
+
+              <!-- DESTINATION B: AI GALAXY -->
+              <button class="planet-node" data-galaxy="ai" id="node-galaxy-ai" type="button" style="left: 72%; top: 28%;" aria-label="Explore AI Galaxy">
+                <div class="planet-sphere sphere-ai">
+                  <div class="planet-halo"></div>
+                  <div class="planet-ring"></div>
+                  <span class="planet-symbol">&#9889;</span>
+                </div>
+                <div class="planet-label-card">
+                  <span class="p-sector">SECTOR 02</span>
+                  <span class="p-name">AI Galaxy</span>
+                </div>
+              </button>
+
+              <!-- DESTINATION C: CREATIVE GALAXY -->
+              <button class="planet-node" data-galaxy="creative" id="node-galaxy-creative" type="button" style="left: 80%; top: 68%;" aria-label="Explore Creative Galaxy">
+                <div class="planet-sphere sphere-creative">
+                  <div class="planet-halo"></div>
+                  <div class="planet-ring"></div>
+                  <span class="planet-symbol">&#10022;</span>
+                </div>
+                <div class="planet-label-card">
+                  <span class="p-sector">SECTOR 03</span>
+                  <span class="p-name">Creative Galaxy</span>
+                </div>
+              </button>
+
+              <!-- DESTINATION D: DATA GALAXY -->
+              <button class="planet-node" data-galaxy="data" id="node-galaxy-data" type="button" style="left: 20%; top: 72%;" aria-label="Explore Data Galaxy">
+                <div class="planet-sphere sphere-data">
+                  <div class="planet-halo"></div>
+                  <div class="planet-ring"></div>
+                  <span class="planet-symbol">&#9670;</span>
+                </div>
+                <div class="planet-label-card">
+                  <span class="p-sector">SECTOR 04</span>
+                  <span class="p-name">Data Galaxy</span>
+                </div>
+              </button>
+
+              <!-- DESTINATION E: BUSINESS GALAXY -->
+              <button class="planet-node" data-galaxy="business" id="node-galaxy-business" type="button" style="left: 50%; top: 12%;" aria-label="Explore Business Galaxy">
+                <div class="planet-sphere sphere-business">
+                  <div class="planet-halo"></div>
+                  <div class="planet-ring"></div>
+                  <span class="planet-symbol">&#9650;</span>
+                </div>
+                <div class="planet-label-card">
+                  <span class="p-sector">SECTOR 05</span>
+                  <span class="p-name">Business Galaxy</span>
+                </div>
+              </button>
+
+            </div>
+
+            <!-- Central Star Label -->
+            <div class="singularity-caption" aria-hidden="true">
+              <span class="singularity-title">ORBITAL CORE</span>
+              <span class="singularity-sub">ORIGIN OF CURIOSITY</span>
+            </div>
+          </div>
+
+          <!-- 2. Dynamic Galaxy Telemetry HUD Dossier Panel -->
+          <aside class="galaxy-hud-panel" id="galaxy-hud-panel" aria-live="polite">
+            <div class="hud-top-meta">
+              <span class="hud-badge" id="hud-galaxy-sector">SECTOR 01 // ORBIT ACTIVE</span>
+              <span class="hud-coordinates" id="hud-galaxy-coordinates">COORD: 34.2°N 118.4°W</span>
+            </div>
+
+            <h3 class="hud-title" id="hud-galaxy-title">Code Galaxy</h3>
+            <p class="hud-lead" id="hud-galaxy-desc">
+              Master the computational engines and foundational languages powering the modern universe. From core C memory logic to full-stack reactive clouds.
+            </p>
+
+            <div class="hud-subjects-block">
+              <h4 class="hud-subheading">Active Planetary Subjects</h4>
+              <ul class="hud-subjects-pills" id="hud-galaxy-subjects">
+                <!-- Dynamically populated via script.js -->
+              </ul>
+            </div>
+
+            <div class="hud-feature-course-card">
+              <span class="fc-badge">FEATURED MISSION</span>
+              <h5 class="fc-title" id="hud-galaxy-course-title">High-Performance C &amp; Embedded Systems</h5>
+              <p class="fc-meta" id="hud-galaxy-course-meta">10 Weeks &bull; Advanced &bull; 4.97 ★</p>
+              <button id="hud-galaxy-action-btn" class="btn-primary-sm fc-btn" type="button">
+                <span>View Mission Brief &rarr;</span>
+              </button>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- 3. Accessible Tactical Index Alternative (Mobile & Keyboard Users) -->
+        <div id="galaxy-list-view" class="galaxy-tactical-list hidden" role="region" aria-label="Accessible Galaxy Destination Index">
+          <div class="tactical-grid" id="tactical-destinations-grid">
+            <!-- Dynamically populated via script.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: MISSION CONTROL — COURSE DISCOVERY
+         ======================================================================= -->
+    <section id="missions" class="section missions-section" aria-label="Mission Control Course Catalog">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-index">02</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-name">CATALOG OF WORLDS</span>
+          </div>
+          <h2 class="section-title">Mission Control.</h2>
+          <p class="section-lead">
+            Select your next learning mission. Each mission provides deep hands-on project flight logs, verified instructor mentorship, and rigorous milestone achievements.
+          </p>
+        </div>
+
+        <!-- Mission Control Filtering & Search Deck -->
+        <div class="mission-controls-deck reveal-on-scroll">
+          
+          <!-- Top Row: Search & Count -->
+          <div class="controls-top-row">
+            <div class="search-command-box">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                id="mission-search-input" 
+                class="mission-search-input" 
+                placeholder="Search missions by destination, instructor, skill, or keyword..."
+                aria-label="Search learning missions"
+              >
+              <button id="clear-mission-search" class="clear-search-btn hidden" type="button" aria-label="Clear mission search query">&times;</button>
+            </div>
+
+            <!-- Difficulty Filter Dropdown -->
+            <div class="difficulty-filter-box">
+              <label for="difficulty-select" class="visually-hidden">Filter by flight difficulty</label>
+              <select id="difficulty-select" class="difficulty-select">
+                <option value="all">All Difficulty Levels</option>
+                <option value="Novice">Novice (Entry)</option>
+                <option value="Intermediate">Intermediate (Pioneer)</option>
+                <option value="Advanced">Advanced (Deep Orbit)</option>
+                <option value="Frontier">Frontier (Mastery)</option>
+              </select>
+            </div>
+
+            <div class="mission-counter">
+              <span id="mission-count-badge">8</span> Missions Logged
+            </div>
+          </div>
+
+          <!-- Bottom Row: Galaxy Sector Pills -->
+          <div class="sector-tabs-scroll" role="tablist" aria-label="Filter missions by galaxy destination">
+            <button class="sector-tab active" data-sector="all" role="tab" aria-selected="true">All Galactical Sectors</button>
+            <button class="sector-tab" data-sector="code" role="tab" aria-selected="false">Code Galaxy</button>
+            <button class="sector-tab" data-sector="ai" role="tab" aria-selected="false">AI Galaxy</button>
+            <button class="sector-tab" data-sector="creative" role="tab" aria-selected="false">Creative Galaxy</button>
+            <button class="sector-tab" data-sector="data" role="tab" aria-selected="false">Data Galaxy</button>
+            <button class="sector-tab" data-sector="business" role="tab" aria-selected="false">Business Galaxy</button>
+          </div>
+
+        </div>
+
+        <!-- Missions Grid Container -->
+        <div id="missions-grid" class="missions-grid reveal-on-scroll">
+          <!-- Populated dynamically via script.js with rich demonstration missions -->
+        </div>
+
+        <!-- Empty Results State -->
+        <div id="no-missions-found" class="no-missions-card hidden">
+          <div class="no-missions-icon">&#128760;</div>
+          <h3 class="no-missions-title">No Mission Trajectories Located</h3>
+          <p class="no-missions-text">We couldn't detect any mission matching your search coordinates. Adjust keywords or reset sector filters.</p>
+          <button id="reset-mission-filters" class="btn-secondary" type="button">Reset Mission Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: LEARNING EXPEDITIONS
+         ======================================================================= -->
+    <section id="expeditions" class="section expeditions-section" aria-label="Learning Expeditions">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-index">03</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-name">GUIDED FLIGHT PATHS</span>
+          </div>
+          <h2 class="section-title">Learning Expeditions.</h2>
+          <p class="section-lead">
+            Curated multistage voyages designed to guide you from foundational curiosity to orbital mastery. No guessing what to learn next.
+          </p>
+        </div>
+
+        <!-- Expedition Selector Tabs -->
+        <div class="expeditions-tabs-strip reveal-on-scroll" role="tablist" aria-label="Available Expeditions">
+          <button class="expedition-btn active" data-expedition="webdev" role="tab" aria-selected="true">
+            <span class="exp-code">MISSION 01</span>
+            <span class="exp-name">Become a Web Developer</span>
+          </button>
+          <button class="expedition-btn" data-expedition="ai" role="tab" aria-selected="false">
+            <span class="exp-code">MISSION 02</span>
+            <span class="exp-name">Explore Artificial Intelligence</span>
+          </button>
+          <button class="expedition-btn" data-expedition="python" role="tab" aria-selected="false">
+            <span class="exp-code">MISSION 03</span>
+            <span class="exp-name">Master Python</span>
+          </button>
+          <button class="expedition-btn" data-expedition="uiux" role="tab" aria-selected="false">
+            <span class="exp-code">MISSION 04</span>
+            <span class="exp-name">Become a UI/UX Designer</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Expedition Display Deck -->
+        <div class="expedition-viewer-deck reveal-on-scroll">
+          
+          <!-- Deck Header -->
+          <div class="expedition-deck-header">
+            <div class="exp-header-info">
+              <span id="exp-badge" class="exp-flight-badge">EXPEDITION ROADMAP // MISSION 01</span>
+              <h3 id="exp-title" class="exp-flight-title">Become a Production-Grade Web Developer</h3>
+              <p id="exp-desc" class="exp-flight-desc">
+                From foundational HTML/CSS/JS through reactive client frameworks, high-throughput microservices, and distributed cloud deployments.
+              </p>
+            </div>
+            
+            <div class="exp-header-stats">
+              <div class="exp-stat-tile">
+                <span class="tile-label">STARTING LEVEL</span>
+                <span id="exp-level" class="tile-val">Novice (Zero to Hero)</span>
+              </div>
+              <div class="exp-stat-tile">
+                <span class="tile-label">ESTIMATED DURATION</span>
+                <span id="exp-duration" class="tile-val">26 Standard Weeks</span>
+              </div>
+              <div class="exp-stat-tile">
+                <span class="tile-label">CAPSTONE MISSIONS</span>
+                <span id="exp-capstones" class="tile-val">4 Major Flight Projects</span>
+              </div>
+              <div class="exp-stat-tile">
+                <span class="tile-label">FINAL DESTINATION</span>
+                <span id="exp-destination" class="tile-val">Full-Stack Cloud Engineer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Stages Grid -->
+          <div class="expedition-stages-container">
+            <div class="exp-trajectory-line" aria-hidden="true"></div>
+            <div id="expedition-stages-list" class="stages-cards-grid">
+              <!-- Dynamically populated via script.js -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: MY ORBIT — LEARNING DASHBOARD
+         ======================================================================= -->
+    <section id="my-orbit" class="section orbit-dashboard-section" aria-label="My Orbit Telemetry Dashboard">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-index">04</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-name">TELEMETRY CONSOLE</span>
+          </div>
+          <h2 class="section-title">My Orbit: Flight Dashboard.</h2>
+          <p class="section-lead">
+            Monitor your personal flight metrics, track mission milestones, and review your weekly intellectual momentum in real time.
+          </p>
+        </div>
+
+        <!-- Dashboard Shell Container -->
+        <div class="orbit-dashboard-shell reveal-on-scroll">
+          
+          <!-- Command Station Bar -->
+          <div class="station-top-bar">
+            <div class="station-status-lights">
+              <span class="light red"></span>
+              <span class="light yellow"></span>
+              <span class="light green"></span>
+            </div>
+            <div class="station-title">
+              <span class="radar-sweep"></span>
+              <span>ORBITAL STATION CONSOLE // EXPLORER TELEMETRY HUD</span>
+            </div>
+            <div class="station-meta">
+              <span class="meta-tag">FRONTEND PREVIEW</span>
+            </div>
+          </div>
+
+          <!-- Dashboard Core Body -->
+          <div class="station-body">
+            
+            <!-- User Status Strip -->
+            <div class="station-user-strip">
+              <div class="user-profile-block">
+                <div class="user-avatar-orbit">
+                  <span class="avatar-initials">AX</span>
+                  <div class="avatar-radar"></div>
+                </div>
+                <div class="user-intel">
+                  <h4 class="user-name">Commander Alex Vance</h4>
+                  <p class="user-track">Active Expedition: <strong>AI Galaxy Pioneer</strong> &bull; Sector 02</p>
+                </div>
+              </div>
+
+              <div class="orbit-streak-capsule">
+                <span class="flame-symbol">&#128293;</span>
+                <div class="streak-data">
+                  <span class="streak-count">21 Sol Days in Orbit</span>
+                  <span class="streak-rate">2.0x Kinetic Momentum</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Telemetry Metrics Grid -->
+            <div class="telemetry-grid">
+              
+              <!-- Card 1: Active Mission In Progress -->
+              <div class="telemetry-card card-active-mission">
+                <div class="t-card-header">
+                  <span class="t-card-tag">ACTIVE SPRINT IN FLIGHT</span>
+                  <span class="t-card-live">LIVE TELEMETRY</span>
+                </div>
+                <h4 class="active-mission-title">Deep Reinforcement Agents &amp; Autonomous Swarms</h4>
+                <p class="active-mission-desc">Stage 3 of 4: Environment Vectorization &amp; Multi-Agent Synchronization</p>
+                
+                <div class="flight-progress-bar">
+                  <div class="progress-track">
+                    <div id="flight-progress-fill" class="progress-fill" style="width: 74%;"></div>
+                  </div>
+                  <div class="progress-meta-row">
+                    <span>Flight Progress</span>
+                    <span id="flight-progress-text">74% Synchronized</span>
+                  </div>
+                </div>
+
+                <div class="t-card-actions">
+                  <button id="btn-continue-flight" class="btn-primary-sm" type="button">
+                    <span>Continue Flight &rarr;</span>
+                  </button>
+                  <span class="flight-last-active">Telemetry ping: 42m ago</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Overall Orbital Mastery -->
+              <div class="telemetry-card card-orbital-mastery">
+                <div class="t-card-header">
+                  <span class="t-card-tag">EXPEDITION PROGRESS</span>
+                </div>
+
+                <div class="radial-gauge-wrapper">
+                  <svg class="radial-gauge-svg" viewBox="0 0 100 100">
+                    <circle class="gauge-track" cx="50" cy="50" r="38"></circle>
+                    <circle class="gauge-fill" cx="50" cy="50" r="38" stroke-dasharray="238.7" stroke-dashoffset="47.7"></circle>
+                  </svg>
+                  <div class="gauge-center">
+                    <span class="gauge-percent">80%</span>
+                    <span class="gauge-sub">Expedition</span>
+                  </div>
+                </div>
+
+                <div class="mastery-footer">
+                  <span>Next Capstone: <strong>Autonomous Swarm Simulator</strong></span>
+                </div>
+              </div>
+
+              <!-- Card 3: Weekly Activity Hours -->
+              <div class="telemetry-card card-weekly-hours">
+                <div class="t-card-header">
+                  <span class="t-card-tag">WEEKLY STUDY HOURS</span>
+                  <span class="hours-badge">26.8 Flight Hours</span>
+                </div>
+
+                <div class="weekly-flight-chart" aria-label="Weekly flight hours chart">
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 65%;" title="Mon: 3.5 hrs"></div>
+                    <span class="day-lbl">Mon</span>
+                  </div>
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 80%;" title="Tue: 4.8 hrs"></div>
+                    <span class="day-lbl">Tue</span>
+                  </div>
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 50%;" title="Wed: 2.8 hrs"></div>
+                    <span class="day-lbl">Wed</span>
+                  </div>
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 90%;" title="Thu: 5.6 hrs"></div>
+                    <span class="day-lbl">Thu</span>
+                  </div>
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 70%;" title="Fri: 4.2 hrs"></div>
+                    <span class="day-lbl">Fri</span>
+                  </div>
+                  <div class="flight-col current-day">
+                    <div class="flight-bar" style="height: 100%;" title="Sat: 6.0 hrs (Today)"></div>
+                    <span class="day-lbl">Sat</span>
+                  </div>
+                  <div class="flight-col">
+                    <div class="flight-bar" style="height: 35%;" title="Sun: Projected"></div>
+                    <span class="day-lbl">Sun</span>
+                  </div>
+                </div>
+
+                <div class="chart-footer-note">
+                  <span>Activity is 22% above baseline orbit velocity</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Missions Completed Summary -->
+              <div class="telemetry-card card-summary-stat">
+                <div class="t-card-header">
+                  <span class="t-card-tag">LOGGED RECORDS</span>
+                </div>
+
+                <div class="summary-stats-stack">
+                  <div class="stat-row">
+                    <span class="s-name">Completed Missions</span>
+                    <span class="s-val">6 Certified</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="s-name">Total Orbital Hours</span>
+                    <span class="s-val">84.5 Hrs</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="s-name">Peer Code Reviews</span>
+                    <span class="s-val">19 Audits</span>
+                  </div>
+                </div>
+
+                <div class="summary-callout">
+                  <span>Certificates cryptographically logged on-chain.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Disclaimer Banner -->
+            <div class="station-disclaimer">
+              <span class="disc-icon">&#9432;</span>
+              <span><strong>Orbital Sandbox Note:</strong> This telemetry console is an interactive frontend demonstration. Account synchronization and live persistent databases are not implemented.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: ACHIEVEMENTS (MILESTONE GALLERY)
+         ======================================================================= -->
+    <section id="achievements" class="section achievements-section" aria-label="Orbital Achievements">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-index">05</span>
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-name">LOGGED MILESTONES</span>
+          </div>
+          <h2 class="section-title">Orbital Achievements.</h2>
+          <p class="section-lead">
+            Every step into the unknown is recognized. Unlocking milestones marks your elevation from casual observer to certified knowledge pioneer.
+          </p>
+        </div>
+
+        <!-- Distinctive Milestone Gallery Grid -->
+        <div class="milestones-grid reveal-on-scroll">
+          
+          <!-- Milestone 1 -->
+          <article class="milestone-card unlocked">
+            <div class="milestone-visual">
+              <div class="glyph-core">&#127775;</div>
+              <div class="glyph-orbit"></div>
+            </div>
+            <div class="milestone-body">
+              <span class="milestone-tag">UNLOCKED // RECONNAISSANCE</span>
+              <h3 class="milestone-title">First Discovery</h3>
+              <p class="milestone-desc">Discovered and charted your first planetary destination in the Knowledge Galaxy.</p>
+              <div class="milestone-status">
+                <span class="status-indicator-dot"></span>
+                <span>Logged to Explorer Dossier</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 2 -->
+          <article class="milestone-card unlocked">
+            <div class="milestone-visual">
+              <div class="glyph-core">&#128760;</div>
+              <div class="glyph-orbit"></div>
+            </div>
+            <div class="milestone-body">
+              <span class="milestone-tag">UNLOCKED // EXECUTION</span>
+              <h3 class="milestone-title">First Mission Completed</h3>
+              <p class="milestone-desc">Completed all stages and capstone submission of a verified learning mission.</p>
+              <div class="milestone-status">
+                <span class="status-indicator-dot"></span>
+                <span>Certificate Verified</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 3 -->
+          <article class="milestone-card unlocked">
+            <div class="milestone-visual">
+              <div class="glyph-core">&#9889;</div>
+              <div class="glyph-orbit"></div>
+            </div>
+            <div class="milestone-body">
+              <span class="milestone-tag">UNLOCKED // SYSTEMS</span>
+              <h3 class="milestone-title">Code Explorer</h3>
+              <p class="milestone-desc">Engineered memory-safe systems logic across C, Rust, and distributed TypeScript.</p>
+              <div class="milestone-status">
+                <span class="status-indicator-dot"></span>
+                <span>Rank 3 Logic Architect</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 4 -->
+          <article class="milestone-card unlocked">
+            <div class="milestone-visual">
+              <div class="glyph-core">&#10022;</div>
+              <div class="glyph-orbit"></div>
+            </div>
+            <div class="milestone-body">
+              <span class="milestone-tag">UNLOCKED // DESIGN</span>
+              <h3 class="milestone-title">Creative Thinker</h3>
+              <p class="milestone-desc">Formulated spatial design tokens, tactile micro-interactions, and visual ergonomics.</p>
+              <div class="milestone-status">
+                <span class="status-indicator-dot"></span>
+                <span>Design System Certified</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Milestone 5 -->
+          <article class="milestone-card frontier-card">
+            <div class="milestone-visual">
+              <div class="glyph-core">&#9670;</div>
+              <div class="glyph-orbit glow-pulse"></div>
+            </div>
+            <div class="milestone-body">
+              <span class="milestone-tag tag-frontier">FRONTIER MILESTONE // IN PROGRESS</span>
+              <h3 class="milestone-title">Knowledge Pioneer</h3>
+              <p class="milestone-desc">Awarded upon completing 3 distinct galactical expeditions and contributing to an open-source capstone.</p>
+              <div class="milestone-status status-pending">
+                <span class="status-indicator-dot pending"></span>
+                <span>2 / 3 Expeditions Certified</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: THE ORBITAL PHILOSOPHY
+         ======================================================================= -->
+    <section id="philosophy" class="section philosophy-section" aria-label="The ORBITAL Philosophy">
+      <div class="container">
+
+        <!-- Editorial Atmosphere Header -->
+        <div class="philosophy-manifesto-block reveal-on-scroll">
+          <span class="manifesto-tag">OUR GUIDING PRINCIPLE</span>
+          <h2 class="manifesto-headline">
+            "Curiosity is the beginning of everything."
+          </h2>
+          <p class="manifesto-sub">
+            Traditional education treats learning as a sterile checklist. At ORBITAL, we treat knowledge as an uncharted cosmos waiting for fearless explorers.
+          </p>
+        </div>
+
+        <!-- 4 Pillars Spatial Composition -->
+        <div class="philosophy-grid reveal-on-scroll">
+          
+          <div class="philosophy-card">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-heading">Discover New Possibilities</h3>
+            <p class="pillar-text">
+              Break past the illusion of boundaries. Explore adjacent disciplines—combining systems engineering with creative motion, or data physics with venture strategy.
+            </p>
+            <div class="pillar-vector-accent" aria-hidden="true"></div>
+          </div>
+
+          <div class="philosophy-card">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-heading">Learn Practical Skills</h3>
+            <p class="pillar-text">
+              Zero fluff, zero outdated syntax. Every curriculum is engineered alongside frontier practitioners to ensure skills translate directly into real-world capability.
+            </p>
+            <div class="pillar-vector-accent" aria-hidden="true"></div>
+          </div>
+
+          <div class="philosophy-card">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-heading">Build Meaningful Projects</h3>
+            <p class="pillar-text">
+              Real comprehension is forged in the compiler and the design canvas. You don't take multiple-choice quizzes; you deploy production artifacts.
+            </p>
+            <div class="pillar-vector-accent" aria-hidden="true"></div>
+          </div>
+
+          <div class="philosophy-card">
+            <span class="pillar-number">04</span>
+            <h3 class="pillar-heading">Explore Beyond Your Comfort Zone</h3>
+            <p class="pillar-text">
+              Growth happens at the edge of the unknown. We design challenges that push your mental models, fostering lifelong resilience and cognitive courage.
+            </p>
+            <div class="pillar-vector-accent" aria-hidden="true"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 8: FINAL CINEMATIC SECTION
+         ======================================================================= -->
+    <section class="final-cinematic-section" aria-label="Begin Your Expedition">
+      <div class="cinematic-planet-horizon" aria-hidden="true">
+        <div class="horizon-arc"></div>
+        <div class="horizon-flare"></div>
+      </div>
+
+      <div class="container cinematic-container reveal-on-scroll">
+        <span class="cinematic-eyebrow">THE EXPEDITION COMMENCES NOW</span>
+        <h2 class="cinematic-headline">
+          "Your next discovery is waiting."
+        </h2>
+        <p class="cinematic-desc">
+          Enter ORBITAL today. Join thousands of thinkers, builders, and pioneers expanding the boundaries of what is possible.
+        </p>
+
+        <div class="cinematic-cta-group">
+          <a href="#galaxy-map" class="btn-primary cinematic-btn">
+            <span>Enter ORBITAL</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#missions" class="btn-secondary cinematic-btn">
+            <span>Explore Mission Catalog &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       GLOBAL FOOTER
+       ========================================================================= -->
+  <footer class="orbital-footer">
+    <div class="container footer-container">
+      
+      <!-- Top Row: Brand & Newsletter -->
+      <div class="footer-top">
+        <div class="footer-brand-side">
+          <div class="orbital-brand">
+            <div class="brand-planet-emblem">
+              <div class="planet-core"></div>
+              <div class="planet-ring-1"></div>
+            </div>
+            <span class="brand-title">ORBITAL</span>
+          </div>
+          <p class="footer-tagline">
+            Knowledge has no boundaries. An immersive digital universe dedicated to limitless exploration and practical mastery.
+          </p>
+        </div>
+
+        <!-- Dispatch Newsletter -->
+        <div class="footer-dispatch-side">
+          <h4 class="dispatch-title">Subscribe to The Orbital Dispatch</h4>
+          <p class="dispatch-sub">Weekly frontier engineering papers, spatial design breakdowns, and platform mission releases.</p>
+          
+          <form id="orbital-newsletter-form" class="dispatch-form" novalidate>
+            <div class="dispatch-input-wrapper">
+              <input 
+                type="email" 
+                id="dispatch-email" 
+                class="dispatch-input" 
+                placeholder="Enter explorer email..." 
+                required 
+                autocomplete="email"
+              >
+              <button type="submit" class="dispatch-btn">
+                <span>Subscribe</span>
+              </button>
+            </div>
+            <span id="dispatch-feedback" class="dispatch-feedback" aria-live="polite"></span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="footer-nav-grid">
+        <div class="footer-nav-col">
+          <h5>Galactic Sectors</h5>
+          <ul>
+            <li><a href="#galaxy-map">Code Galaxy</a></li>
+            <li><a href="#galaxy-map">AI Galaxy</a></li>
+            <li><a href="#galaxy-map">Creative Galaxy</a></li>
+            <li><a href="#galaxy-map">Data Galaxy</a></li>
+            <li><a href="#galaxy-map">Business Galaxy</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h5>Expeditions</h5>
+          <ul>
+            <li><a href="#expeditions">Full-Stack Web Dev</a></li>
+            <li><a href="#expeditions">Artificial Intelligence</a></li>
+            <li><a href="#expeditions">Python Systems Logic</a></li>
+            <li><a href="#expeditions">UI/UX Spatial Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h5>Platform HUD</h5>
+          <ul>
+            <li><a href="#missions">Mission Control</a></li>
+            <li><a href="#my-orbit">Flight Telemetry</a></li>
+            <li><a href="#achievements">Milestone Gallery</a></li>
+            <li><a href="#philosophy">Core Philosophy</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h5>Governance</h5>
+          <ul>
+            <li><a href="#hero">Mission Standards</a></li>
+            <li><a href="#hero">Privacy Boundary</a></li>
+            <li><a href="#hero">Open Telemetry</a></li>
+            <li><a href="#hero">WCAG Conformance</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year">2026</span> ORBITAL Learning Universe. All knowledge rights reserved. Frontend Demonstration Experience.
+        </p>
+        <button id="back-to-top-btn" class="back-to-top" type="button" aria-label="Return to flight deck">
+          <span>Flight Deck (Top) &uarr;</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS SYSTEM
+       ========================================================================= -->
+
+  <!-- 1. COURSE DETAIL / MISSION BRIEF MODAL -->
+  <div id="mission-brief-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-mission-title" aria-hidden="true">
+    <div class="modal-backdrop" id="mission-modal-backdrop"></div>
+    <div class="modal-window">
+      <button class="modal-close" id="mission-modal-close" aria-label="Close mission brief">&times;</button>
+      
+      <div class="modal-header-deck">
+        <div class="modal-sector-tag" id="modal-mission-sector">SECTOR // GALAXY</div>
+        <h3 class="modal-title" id="modal-mission-title">Mission Title</h3>
+        <p class="modal-instructor-meta">
+          Commander Lead: <span id="modal-mission-instructor" class="text-glow">Instructor</span> &bull; 
+          <span id="modal-mission-duration">10 Weeks</span> &bull; 
+          <span id="modal-mission-difficulty" class="badge-difficulty">Advanced</span>
+        </p>
+      </div>
+
+      <div class="modal-scroll-body">
+        <div class="modal-section-block">
+          <h4 class="modal-block-heading">Flight Overview &amp; Trajectory</h4>
+          <p id="modal-mission-overview" class="modal-prose"></p>
+        </div>
+
+        <div class="modal-section-block">
+          <h4 class="modal-block-heading">Modular Flight Syllabus</h4>
+          <ul id="modal-mission-syllabus" class="modal-syllabus-list">
+            <!-- Dynamically populated via script.js -->
+          </ul>
+        </div>
+
+        <div class="modal-section-block">
+          <h4 class="modal-block-heading">Skills &amp; Flight Instruments Mastered</h4>
+          <div id="modal-mission-skills" class="modal-skills-cluster"></div>
+        </div>
+
+        <div class="modal-action-footer">
+          <div class="modal-price-meta">
+            <span class="modal-price-val" id="modal-mission-price">$139</span>
+            <span class="modal-price-sub">Lifetime Mission Access</span>
+          </div>
+          <button id="modal-enroll-action-btn" class="btn-primary" type="button">
+            <span>Initiate Mission Flight (Demonstration)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ORBITAL DEMONSTRATION SIMULATION MODAL -->
+  <div id="orbital-sim-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="sim-modal-title" aria-hidden="true">
+    <div class="modal-backdrop" id="sim-modal-backdrop"></div>
+    <div class="modal-window modal-sm">
+      <button class="modal-close" id="sim-modal-close" aria-label="Close dialog">&times;</button>
+      
+      <div class="sim-modal-interior">
+        <div class="sim-beacon-icon">&#10003;</div>
+        <h3 id="sim-modal-title" class="sim-title">Telemetry Registered</h3>
+        <p id="sim-modal-message" class="sim-message">Your flight coordinates have been logged in the ORBITAL demonstration environment.</p>
+        
+        <div class="sim-architecture-note">
+          <strong>Architecture Note:</strong> In production, this coordinates with OAuth passkeys and cloud mission enrollment services.
+        </div>
+
+        <div class="sim-actions-row">
+          <button id="sim-modal-dismiss" class="btn-primary" type="button">
+            <span>Return to Flight Deck</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
