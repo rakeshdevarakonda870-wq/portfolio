@@ -1,0 +1,13 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+*.swp
+
+# Environment & credentials
+.env
+.env.*
+*.local
+
+# Editor directories
+.vscode/
+.idea/
