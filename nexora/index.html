@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>NEXORA — The World is Changing. Learn to Shape It.</title>
+  <meta name="title" content="NEXORA — Futuristic Online Learning Universe">
+  <meta name="description" content="Explore frontier disciplines, master powerful technologies, and build the future with NEXORA. An award-grade digital learning universe.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%2305070e' stroke='%2300d2ff' stroke-width='4'/%3E%3Cpolygon points='50,18 78,72 22,72' fill='none' stroke='%237c3aed' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%2300d2ff'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Syne (Display), Space Grotesk (Tech Accent), Inter (Body), JetBrains Mono (Code/HUD) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Three.js (for 3D Knowledge Sphere, with graceful 2D Canvas fallback) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY: Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ATMOSPHERIC BACKGROUND -->
+  <div class="cosmos-backdrop" aria-hidden="true">
+    <div class="cosmos-noise"></div>
+    <div class="cosmos-vignette"></div>
+    <div class="aurora-glow glow-primary"></div>
+    <div class="aurora-glow glow-secondary"></div>
+    <div class="aurora-glow glow-tertiary"></div>
+  </div>
+
+  <!-- =========================================================================
+       GLOBAL NAVIGATION HEADER
+       ========================================================================= -->
+  <header id="site-header" class="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="NEXORA Home">
+        <div class="logo-emblem">
+          <span class="emblem-core"></span>
+          <span class="emblem-ring"></span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">NEXORA</span>
+          <span class="logo-tag">LEARNING UNIVERSE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#courses" class="nav-link">Courses</a></li>
+          <li><a href="#learning-paths" class="nav-link">Paths</a></li>
+          <li><a href="#command-center" class="nav-link">Command Center</a></li>
+          <li><a href="#difference" class="nav-link">The Difference</a></li>
+          <li><a href="#stories" class="nav-link">Stories</a></li>
+          <li><a href="#membership" class="nav-link">Pricing</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Quick Search Trigger -->
+        <button id="quick-search-trigger" class="btn-icon-nav" type="button" aria-label="Open search" title="Search courses">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Demo Sign-In Trigger -->
+        <button id="header-signin-btn" class="btn-ghost-nav" type="button">
+          <span>Sign In</span>
+        </button>
+
+        <!-- Explore CTA -->
+        <a href="#courses" class="btn-primary-nav">
+          <span>Explore Universe</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Drawer Hamburger -->
+        <button id="mobile-toggle" class="mobile-toggle-btn" type="button" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Scroll Progress Indicator Bar -->
+    <div id="scroll-progress-line" class="scroll-progress-line" aria-hidden="true"></div>
+  </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <div class="logo-emblem">
+            <span class="emblem-core"></span>
+            <span class="emblem-ring"></span>
+          </div>
+          <span class="logo-title">NEXORA</span>
+        </div>
+        <button id="drawer-close-btn" class="drawer-close" aria-label="Close navigation">&times;</button>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-nav-list">
+          <li><a href="#hero" class="drawer-link"><span class="d-num">00</span> Home</a></li>
+          <li><a href="#courses" class="drawer-link"><span class="d-num">01</span> Knowledge Universe</a></li>
+          <li><a href="#learning-paths" class="drawer-link"><span class="d-num">02</span> Learning Paths</a></li>
+          <li><a href="#command-center" class="drawer-link"><span class="d-num">03</span> Command Center</a></li>
+          <li><a href="#difference" class="drawer-link"><span class="d-num">04</span> The Difference</a></li>
+          <li><a href="#stories" class="drawer-link"><span class="d-num">05</span> Student Stories</a></li>
+          <li><a href="#membership" class="drawer-link"><span class="d-num">06</span> Membership</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-footer">
+        <a href="#courses" class="btn-primary-block drawer-action-btn">
+          <span>Explore All Courses &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MAIN CONTENT WRAPPER
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- =======================================================================
+         SECTION 1: CINEMATIC HERO EXPERIENCE
+         ======================================================================= -->
+    <section id="hero" class="hero-section" aria-label="Welcome to NEXORA">
+      <!-- 3D Interactive Knowledge Sphere Canvas -->
+      <div class="hero-canvas-viewport" aria-hidden="true">
+        <canvas id="knowledge-sphere-canvas"></canvas>
+      </div>
+
+      <div class="container hero-container">
+        
+        <!-- Status / Intelligence Pill -->
+        <div class="hero-tag-pill reveal-fade">
+          <span class="pill-dot">
+            <span class="dot-ring"></span>
+            <span class="dot-core"></span>
+          </span>
+          <span class="pill-category">NEXORA PLATFORM // VERSION 3.4</span>
+          <span class="pill-separator">/</span>
+          <span class="pill-highlight">DISCOVERY ACTIVE</span>
+        </div>
+
+        <!-- Central Hero Headline Block -->
+        <div class="hero-content-block">
+          <h1 class="hero-main-headline">
+            <span class="headline-row reveal-text" data-delay="100">
+              <span class="text-gradient">The world is changing.</span>
+            </span>
+            <span class="headline-row reveal-text" data-delay="250">
+              <span class="text-outline">Learn to shape it.</span>
+            </span>
+          </h1>
+
+          <p class="hero-lead-text reveal-fade" data-delay="400">
+            Explore new disciplines, master powerful skills and create the future you imagine.<br class="hide-mobile">
+            An immersive digital learning universe combining computational rigor with creative mastery.
+          </p>
+
+          <!-- Call to Action Buttons -->
+          <div class="hero-cta-group reveal-fade" data-delay="550">
+            <a href="#courses" class="btn-primary hero-btn">
+              <span class="btn-text">Explore the Universe</span>
+              <span class="btn-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#difference" class="btn-secondary hero-btn">
+              <span class="btn-text">Discover How It Works</span>
+              <span class="btn-icon">&darr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Metric Coordinates Ticker -->
+        <div class="hero-metrics-ticker reveal-fade" data-delay="700">
+          <div class="metric-item">
+            <span class="metric-number">45,000+</span>
+            <span class="metric-desc">Active Explorers</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">94.2%</span>
+            <span class="metric-desc">Project Completion</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">120+</span>
+            <span class="metric-desc">Frontier Mentors</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">4.96 ★</span>
+            <span class="metric-desc">Student Rating</span>
+          </div>
+        </div>
+
+        <!-- Hero Scroll Down Prompt -->
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <span class="mouse-icon">
+            <span class="mouse-wheel"></span>
+          </span>
+          <span class="cue-label">SCROLL TO DISCOVER</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: EXPLORE THE KNOWLEDGE UNIVERSE (COURSES)
+         ======================================================================= -->
+    <section id="courses" class="section courses-section" aria-label="Course Directory">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">01</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">KNOWLEDGE CATALOG</span>
+          </div>
+          <h2 class="section-title">Explore the Knowledge Universe.</h2>
+          <p class="section-lead">
+            Hand-crafted curricula designed by frontier practitioners. Master the technologies defining the next decade through rigorous hands-on execution.
+          </p>
+        </div>
+
+        <!-- Search & Dynamic Filter Control Bar -->
+        <div class="catalog-controls reveal-on-scroll">
+          <!-- Search Bar -->
+          <div class="catalog-search-wrapper">
+            <div class="search-input-box">
+              <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input 
+                type="text" 
+                id="course-search-input" 
+                class="search-input" 
+                placeholder="Search courses by keyword, instructor, skill or technology..." 
+                aria-label="Search courses"
+              >
+              <button id="clear-search-btn" class="clear-search-btn hidden" type="button" aria-label="Clear search input">&times;</button>
+            </div>
+            <div class="search-results-counter">
+              <span id="results-count-num">8</span> courses found
+            </div>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="category-tabs-container" role="tablist" aria-label="Course categories">
+            <button class="cat-tab active" data-category="all" role="tab" aria-selected="true">All Disciplines</button>
+            <button class="cat-tab" data-category="ai" role="tab" aria-selected="false">Artificial Intelligence</button>
+            <button class="cat-tab" data-category="web" role="tab" aria-selected="false">Web Development</button>
+            <button class="cat-tab" data-category="programming" role="tab" aria-selected="false">Programming</button>
+            <button class="cat-tab" data-category="data" role="tab" aria-selected="false">Data Science</button>
+            <button class="cat-tab" data-category="design" role="tab" aria-selected="false">UI/UX Design</button>
+            <button class="cat-tab" data-category="security" role="tab" aria-selected="false">Cybersecurity</button>
+            <button class="cat-tab" data-category="business" role="tab" aria-selected="false">Business &amp; Tech</button>
+            <button class="cat-tab" data-category="cloud" role="tab" aria-selected="false">Cloud Computing</button>
+          </div>
+        </div>
+
+        <!-- Course Cards Grid -->
+        <div id="courses-grid" class="courses-grid reveal-on-scroll">
+          <!-- Populated dynamically via script.js with rich sample data -->
+        </div>
+
+        <!-- Empty State Fallback -->
+        <div id="no-courses-found" class="no-courses-card hidden">
+          <div class="no-courses-icon">&#9785;</div>
+          <h3 class="no-courses-title">No matching courses located</h3>
+          <p class="no-courses-text">Try adjusting your keywords, selecting a different discipline, or resetting the search filter.</p>
+          <button id="reset-filters-btn" class="btn-secondary" type="button">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: INTERACTIVE LEARNING PATHS
+         ======================================================================= -->
+    <section id="learning-paths" class="section paths-section" aria-label="Learning Paths">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">02</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">STRUCTURED HORIZONS</span>
+          </div>
+          <h2 class="section-title">Guided Journeys from Novice to Master.</h2>
+          <p class="section-lead">
+            Stop wondering what to study next. Follow curated, milestone-driven roadmaps engineered for comprehensive industry readiness.
+          </p>
+        </div>
+
+        <!-- Path Selection Navigation Strip -->
+        <div class="paths-selector-tabs reveal-on-scroll" role="tablist" aria-label="Learning Path Choices">
+          <button class="path-nav-btn active" data-path="fullstack" role="tab" aria-selected="true">
+            <span class="path-btn-tag">ENGINEERING</span>
+            <span class="path-btn-title">Full-Stack Developer</span>
+          </button>
+          <button class="path-nav-btn" data-path="ai" role="tab" aria-selected="false">
+            <span class="path-btn-tag">FRONTIER TECH</span>
+            <span class="path-btn-title">Enter the World of AI</span>
+          </button>
+          <button class="path-nav-btn" data-path="python" role="tab" aria-selected="false">
+            <span class="path-btn-tag">SYSTEMS &amp; LOGIC</span>
+            <span class="path-btn-title">Master Python</span>
+          </button>
+          <button class="path-nav-btn" data-path="uiux" role="tab" aria-selected="false">
+            <span class="path-btn-tag">PRODUCT DESIGN</span>
+            <span class="path-btn-title">UI/UX Designer</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Path Roadmap Viewer -->
+        <div class="path-display-card reveal-on-scroll">
+          <div class="path-summary-header">
+            <div class="path-header-left">
+              <span id="path-category-badge" class="path-badge">FULL-STACK ROADMAP</span>
+              <h3 id="path-title" class="path-heading">Become a Production-Grade Full-Stack Developer</h3>
+              <p id="path-description" class="path-lead">
+                A 360-degree journey from foundational web architecture through reactive frontend design, robust microservice APIs, and automated cloud deployments.
+              </p>
+            </div>
+            <div class="path-header-right">
+              <div class="path-stat-box">
+                <span class="stat-label">TOTAL DURATION</span>
+                <span id="path-duration" class="stat-val">28 Weeks</span>
+              </div>
+              <div class="path-stat-box">
+                <span class="stat-label">PROJECT PORTFOLIO</span>
+                <span id="path-projects" class="stat-val">4 Major Capstones</span>
+              </div>
+              <div class="path-stat-box">
+                <span class="stat-label">DIFFICULTY</span>
+                <span id="path-level" class="stat-val">Beginner &rarr; Advanced</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Stages Timeline -->
+          <div class="path-stages-container">
+            <div class="stages-timeline-track" aria-hidden="true"></div>
+            <div id="path-stages-list" class="stages-grid">
+              <!-- Dynamically populated via script.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: LEARNING COMMAND CENTER (DASHBOARD PREVIEW)
+         ======================================================================= -->
+    <section id="command-center" class="section dashboard-section" aria-label="Learning Command Center">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">03</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">INTERACTIVE SIMULATION</span>
+          </div>
+          <h2 class="section-title">Your Learning Command Center.</h2>
+          <p class="section-lead">
+            Track cognitive momentum, monitor project milestones, and analyze your weekly study rhythm in real-time.
+          </p>
+        </div>
+
+        <!-- Dashboard Window Mockup -->
+        <div class="dashboard-shell reveal-on-scroll">
+          <!-- Window Header Bar -->
+          <div class="dashboard-window-bar">
+            <div class="window-controls">
+              <span class="win-btn win-close"></span>
+              <span class="win-btn win-min"></span>
+              <span class="win-btn win-max"></span>
+            </div>
+            <div class="window-title">
+              <span class="pulse-status-dot"></span>
+              <span>NEXORA OS // EXPLORER TELEMETRY DASHBOARD</span>
+            </div>
+            <div class="window-meta">
+              <span class="badge-demo">FRONTEND PREVIEW</span>
+            </div>
+          </div>
+
+          <!-- Dashboard Main Interior -->
+          <div class="dashboard-body">
+            
+            <!-- Welcome Strip -->
+            <div class="dash-welcome-strip">
+              <div class="user-greeting">
+                <div class="user-avatar-frame">
+                  <span class="avatar-initials">AX</span>
+                </div>
+                <div class="user-meta-text">
+                  <h4 class="greeting-name">Welcome back, Explorer Alex</h4>
+                  <p class="greeting-status">Active Track: <strong>Artificial Intelligence Pioneer</strong> &bull; Level 4 Pioneer</p>
+                </div>
+              </div>
+
+              <!-- Streak Counter -->
+              <div class="streak-capsule">
+                <span class="streak-flame">&#128293;</span>
+                <div class="streak-data">
+                  <span class="streak-num">14 Days Active</span>
+                  <span class="streak-sub">1.5x Momentum Multiplier</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Analytics Grid -->
+            <div class="dash-analytics-grid">
+              
+              <!-- Card 1: Active Course In-Progress -->
+              <div class="dash-card card-active-course">
+                <div class="dash-card-header">
+                  <span class="dash-card-tag">IN PROGRESS // ACTIVE SPRINT</span>
+                  <span class="dash-pill-live">LIVE</span>
+                </div>
+                <h4 class="active-course-title">Neural Networks &amp; Autonomous AI Agents</h4>
+                <p class="active-course-module">Module 4 of 8: Deep Reinforcement Learning &amp; Environment Vectorization</p>
+                
+                <div class="progress-bar-container">
+                  <div class="progress-bar-track">
+                    <div id="demo-course-progress-fill" class="progress-bar-fill" style="width: 68%;"></div>
+                  </div>
+                  <div class="progress-bar-labels">
+                    <span>Course Progress</span>
+                    <span id="demo-progress-num">68% Complete</span>
+                  </div>
+                </div>
+
+                <div class="dash-card-actions">
+                  <button id="demo-continue-btn" class="btn-primary-sm" type="button">
+                    <span>Continue Sprint &rarr;</span>
+                  </button>
+                  <span class="last-studied-time">Last active: 2 hours ago</span>
+                </div>
+              </div>
+
+              <!-- Card 2: Overall Progress Ring -->
+              <div class="dash-card card-overall-progress">
+                <div class="dash-card-header">
+                  <span class="dash-card-tag">COGNITIVE MASTERY</span>
+                </div>
+                
+                <div class="radial-metric-box">
+                  <div class="radial-ring-wrapper">
+                    <svg class="radial-svg" viewBox="0 0 100 100">
+                      <circle class="radial-bg" cx="50" cy="50" r="40"></circle>
+                      <circle class="radial-progress" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="55"></circle>
+                    </svg>
+                    <div class="radial-center-text">
+                      <span class="radial-percent">78%</span>
+                      <span class="radial-sub">Path Complete</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="path-milestone-footer">
+                  <span class="milestone-note">Next Capstone Milestone: <strong>Agent Multi-Threading Architecture</strong></span>
+                </div>
+              </div>
+
+              <!-- Card 3: Weekly Activity Chart -->
+              <div class="dash-card card-weekly-chart">
+                <div class="dash-card-header">
+                  <span class="dash-card-tag">WEEKLY COGNITIVE STUDY HOURS</span>
+                  <span class="total-hours-badge">24.5 Hours This Week</span>
+                </div>
+
+                <div class="weekly-bars-display" aria-label="Weekly study hours chart">
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 60%;" title="Mon: 3.2 hrs"></div>
+                    <span class="bar-day">Mon</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 75%;" title="Tue: 4.5 hrs"></div>
+                    <span class="bar-day">Tue</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 45%;" title="Wed: 2.5 hrs"></div>
+                    <span class="bar-day">Wed</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 85%;" title="Thu: 5.1 hrs"></div>
+                    <span class="bar-day">Thu</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 65%;" title="Fri: 3.8 hrs"></div>
+                    <span class="bar-day">Fri</span>
+                  </div>
+                  <div class="bar-col active-today">
+                    <div class="bar-fill" style="height: 95%;" title="Sat: 5.4 hrs"></div>
+                    <span class="bar-day">Sat</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-fill" style="height: 30%;" title="Sun: Projected"></div>
+                    <span class="bar-day">Sun</span>
+                  </div>
+                </div>
+
+                <div class="chart-summary-note">
+                  <span>Pacing is 18% higher than last week's cohort baseline</span>
+                </div>
+              </div>
+
+              <!-- Card 4: Milestones & Badges -->
+              <div class="dash-card card-achievements">
+                <div class="dash-card-header">
+                  <span class="dash-card-tag">UNLOCKED BADGES</span>
+                  <span class="badges-count">5 / 12 Unlocked</span>
+                </div>
+
+                <div class="badges-row">
+                  <div class="badge-item active" title="Algorithmic Mastery">
+                    <span class="badge-icon">&#9889;</span>
+                    <span class="badge-name">Logic Architect</span>
+                  </div>
+                  <div class="badge-item active" title="Clean Code Standard">
+                    <span class="badge-icon">&#10003;</span>
+                    <span class="badge-name">Code Purity</span>
+                  </div>
+                  <div class="badge-item active" title="10-Day Streak">
+                    <span class="badge-icon">&#128293;</span>
+                    <span class="badge-name">Momentum</span>
+                  </div>
+                  <div class="badge-item locked" title="Complete 3 Capstone Projects (Locked)">
+                    <span class="badge-icon">&#128274;</span>
+                    <span class="badge-name">Capstone Master</span>
+                  </div>
+                </div>
+
+                <div class="achievements-callout">
+                  <span>Complete Module 4 to unlock the <strong>Deep RL Sovereign</strong> badge.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Transparency Disclaimer Banner -->
+            <div class="dash-transparency-banner">
+              <span class="info-symbol">&#9432;</span>
+              <span><strong>Demonstration Sandbox:</strong> This dashboard is a high-fidelity interactive simulation illustrating NEXORA's student experience and telemetry systems.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: THE NEXORA DIFFERENCE
+         ======================================================================= -->
+    <section id="difference" class="section difference-section" aria-label="The NEXORA Difference">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">04</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">PEDAGOGICAL PHILOSOPHY</span>
+          </div>
+          <h2 class="section-title">Engineered for True Understanding.</h2>
+          <p class="section-lead">
+            Online education shouldn't be passive video streaming. NEXORA was conceived from first principles to bridge the gap between abstract theory and real-world execution.
+          </p>
+        </div>
+
+        <!-- Spatial Editorial Composition -->
+        <div class="difference-spatial-grid reveal-on-scroll">
+
+          <!-- Pillar 1 (Heroic Feature) -->
+          <div class="spatial-card card-large">
+            <div class="card-gradient-overlay"></div>
+            <div class="card-inner">
+              <span class="pillar-idx">01</span>
+              <h3 class="pillar-title">Learning by Building from Day Zero</h3>
+              <p class="pillar-desc">
+                We believe true mastery is forged in the compiler, not in slides. Every conceptual lesson immediately branches into live sandboxes, unit tests, and interactive debugging environments. You learn concepts by implementing them.
+              </p>
+              <div class="pillar-hud-graphic">
+                <div class="hud-code-snippet">
+                  <span class="code-comment">// Instantiate autonomous reinforcement environment</span><br>
+                  <span class="code-kw">const</span> agent = <span class="code-kw">new</span> <span class="code-fn">AutonomousAgent</span>({ horizon: <span class="code-num">2048</span>, entropy: <span class="code-num">0.02</span> });<br>
+                  <span class="code-kw">await</span> agent.<span class="code-fn">convergePolicy</span>(); <span class="code-tag-ok">&bull; CONVERGED (99.8%)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="spatial-card">
+            <div class="card-inner">
+              <span class="pillar-idx">02</span>
+              <h3 class="pillar-title">Industry-Relevant Stacks, Zero Fluff</h3>
+              <p class="pillar-desc">
+                Curricula are continuously refreshed alongside technical advances. Learn modern TypeScript, PyTorch, Rust, Kubernetes, and neuromorphic design patterns used by today’s top engineering teams.
+              </p>
+              <div class="pillar-tag-strip">
+                <span>TypeScript</span>
+                <span>PyTorch</span>
+                <span>Rust</span>
+                <span>Next.js</span>
+                <span>Kubernetes</span>
+                <span>Docker</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="spatial-card">
+            <div class="card-inner">
+              <span class="pillar-idx">03</span>
+              <h3 class="pillar-title">Flexible Hyper-Pacing</h3>
+              <p class="pillar-desc">
+                Study on your own schedule without sacrificing peer momentum. Access asynchronous deep-dives paired with weekly live office hours, code review circles, and mentor critiques.
+              </p>
+              <div class="pillar-metric-highlight">
+                <span class="hl-value">100%</span>
+                <span class="hl-label">Asynchronous Flexibility + Live Mentorship</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="spatial-card">
+            <div class="card-inner">
+              <span class="pillar-idx">04</span>
+              <h3 class="pillar-title">Production Capstone Portfolios</h3>
+              <p class="pillar-desc">
+                Graduate with deployed, documented open-source projects rather than quiz scores. Our capstone projects are structured to withstand rigorous technical interviews.
+              </p>
+              <div class="pillar-metric-highlight">
+                <span class="hl-value">4+</span>
+                <span class="hl-label">Production Deployments Per Learning Path</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="spatial-card">
+            <div class="card-inner">
+              <span class="pillar-idx">05</span>
+              <h3 class="pillar-title">Lifelong Cognitive Community</h3>
+              <p class="pillar-desc">
+                Education doesn't stop when a course ends. Gain lifetime access to our global explorer collective, hackathons, job boards, and frontier research reading groups.
+              </p>
+              <div class="pillar-metric-highlight">
+                <span class="hl-value">45K+</span>
+                <span class="hl-label">Global Thinkers &amp; Alumni Network</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: STUDENT STORIES (TESTIMONIALS)
+         ======================================================================= -->
+    <section id="stories" class="section stories-section" aria-label="Student Stories">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">05</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">PROVEN OUTCOMES</span>
+          </div>
+          <h2 class="section-title">Minds in Motion. Futures Created.</h2>
+          <p class="section-lead">
+            Hear from developers, designers, and scientists who transformed their technical capabilities through NEXORA.
+          </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="stories-grid reveal-on-scroll">
+
+          <!-- Story 1 -->
+          <article class="story-card">
+            <div class="story-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="story-quote">
+              "NEXORA completely redefined how I view software engineering. The Autonomous AI Agents course bridged theory with practical PyTorch pipelines in a way no traditional university course ever managed."
+            </p>
+            <div class="story-author-info">
+              <div class="author-avatar av-1">TR</div>
+              <div class="author-meta">
+                <span class="author-name">Tariq Rahman</span>
+                <span class="author-role">Machine Learning Engineer &bull; Ex-Student</span>
+              </div>
+            </div>
+            <span class="verified-course-tag">Completed: AI Pioneer Path</span>
+          </article>
+
+          <!-- Story 2 -->
+          <article class="story-card">
+            <div class="story-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="story-quote">
+              "The Spatial UI/UX curriculum gave me the precision and systems-level thinking required to land my dream design role. The capstone reviews from industry mentors were invaluable."
+            </p>
+            <div class="story-author-info">
+              <div class="author-avatar av-2">ML</div>
+              <div class="author-meta">
+                <span class="author-name">Maya Lindqvist</span>
+                <span class="author-role">Product Designer &bull; Stockholm</span>
+              </div>
+            </div>
+            <span class="verified-course-tag">Completed: UI/UX Designer Path</span>
+          </article>
+
+          <!-- Story 3 -->
+          <article class="story-card">
+            <div class="story-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="story-quote">
+              "Coming from an unconventional background, the Full-Stack Developer path provided a clear, uncompromising roadmap. Today I lead distributed cloud architecture sprints with complete confidence."
+            </p>
+            <div class="story-author-info">
+              <div class="author-avatar av-3">CK</div>
+              <div class="author-meta">
+                <span class="author-name">Carlos Kincaid</span>
+                <span class="author-role">Senior Cloud Engineer &bull; Austin, TX</span>
+              </div>
+            </div>
+            <span class="verified-course-tag">Completed: Full-Stack Path</span>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: MEMBERSHIP EXPERIENCE (PRICING & COMPARISON)
+         ======================================================================= -->
+    <section id="membership" class="section pricing-section" aria-label="Membership and Pricing">
+      <div class="container">
+
+        <!-- Section Header -->
+        <div class="section-header reveal-on-scroll">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">06</span>
+            <span class="eyebrow-divider"></span>
+            <span class="eyebrow-text">TRANSPARENT VALUE</span>
+          </div>
+          <h2 class="section-title">Invest in Your Future.</h2>
+          <p class="section-lead">
+            Choose the membership tier that aligns with your ambition. Upgrade, downgrade, or cancel at any time.
+          </p>
+        </div>
+
+        <!-- Billing Toggle Controls -->
+        <div class="pricing-toggle-wrapper reveal-on-scroll">
+          <span class="toggle-label" id="monthly-label">Monthly Billing</span>
+          <button id="billing-toggle" class="billing-toggle" type="button" role="switch" aria-checked="false" aria-label="Toggle annual billing discount">
+            <span class="toggle-knob"></span>
+          </button>
+          <span class="toggle-label" id="annual-label">
+            Annual Billing
+            <span class="discount-pill">Save 20%</span>
+          </span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="pricing-cards-grid reveal-on-scroll">
+
+          <!-- Plan 1: Free Explorer -->
+          <div class="pricing-card card-free">
+            <div class="plan-header">
+              <span class="plan-badge">FOUNDATIONAL ACCESS</span>
+              <h3 class="plan-name">Explorer Free</h3>
+              <p class="plan-desc">For curious individuals testing the waters and exploring core computer science concepts.</p>
+            </div>
+
+            <div class="plan-price-block">
+              <span class="price-val">$0</span>
+              <span class="price-cycle">/ forever free</span>
+            </div>
+
+            <ul class="plan-features-list">
+              <li><span class="check-icon">&#10003;</span> Access to 12 foundational overview courses</li>
+              <li><span class="check-icon">&#10003;</span> Community discussion forum access</li>
+              <li><span class="check-icon">&#10003;</span> Basic curriculum roadmaps &amp; syllabi</li>
+              <li><span class="check-icon">&#10003;</span> Standard browser code editor</li>
+              <li class="feature-disabled"><span class="cross-icon">&times;</span> Capstone project code reviews</li>
+              <li class="feature-disabled"><span class="cross-icon">&times;</span> Live mentor office hours</li>
+              <li class="feature-disabled"><span class="cross-icon">&times;</span> Verified certification of mastery</li>
+            </ul>
+
+            <button class="btn-secondary-block plan-select-btn" data-plan="free" type="button">
+              <span>Start Free Exploration</span>
+            </button>
+          </div>
+
+          <!-- Plan 2: Pro Innovator (Featured) -->
+          <div class="pricing-card card-pro featured-plan">
+            <div class="popular-ribbon">RECOMMENDED FOR CAREER SHIFTERS</div>
+            <div class="plan-header">
+              <span class="plan-badge badge-glow">UNLIMITED UNIVERSE</span>
+              <h3 class="plan-name">NEXORA Pro</h3>
+              <p class="plan-desc">For serious builders, engineers, and designers committed to career-defining technical growth.</p>
+            </div>
+
+            <div class="plan-price-block">
+              <span class="price-currency">$</span>
+              <span class="price-val" id="pro-price-val">29</span>
+              <span class="price-cycle" id="pro-price-cycle">/ month</span>
+            </div>
+
+            <ul class="plan-features-list">
+              <li><span class="check-icon check-glow">&#10003;</span> <strong>Complete catalog access</strong> (all 8 disciplines)</li>
+              <li><span class="check-icon check-glow">&#10003;</span> <strong>Interactive Learning Command Center</strong></li>
+              <li><span class="check-icon check-glow">&#10003;</span> Structured Learning Path roadmaps &amp; capstones</li>
+              <li><span class="check-icon check-glow">&#10003;</span> <strong>Weekly live mentor office hours &amp; Q&amp;A</strong></li>
+              <li><span class="check-icon check-glow">&#10003;</span> Production code reviews &amp; pull-request audits</li>
+              <li><span class="check-icon check-glow">&#10003;</span> Verified digital credentials of completion</li>
+              <li><span class="check-icon check-glow">&#10003;</span> Priority access to new frontier course releases</li>
+            </ul>
+
+            <button class="btn-primary-block plan-select-btn" data-plan="pro" type="button">
+              <span>Join NEXORA Pro &rarr;</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Comparison Table Accordion -->
+        <div class="comparison-container reveal-on-scroll">
+          <button id="toggle-comparison-btn" class="comparison-toggle-btn" type="button" aria-expanded="false">
+            <span>View Detailed Feature Matrix Comparison</span>
+            <span class="toggle-arrow">&darr;</span>
+          </button>
+
+          <div id="comparison-table-wrapper" class="comparison-table-wrapper hidden">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Capability / Feature</th>
+                  <th>Explorer Free</th>
+                  <th>NEXORA Pro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Course Catalog Access</td>
+                  <td>Foundational Courses Only</td>
+                  <td><strong>Unlimited Full Access (All 8 Disciplines)</strong></td>
+                </tr>
+                <tr>
+                  <td>Learning Command Center Telemetry</td>
+                  <td>Basic Streak Tracking</td>
+                  <td><strong>Full Telemetry + Weekly Analytics</strong></td>
+                </tr>
+                <tr>
+                  <td>Mentor Code Reviews</td>
+                  <td>Community Peer-Review</td>
+                  <td><strong>Guaranteed 48hr Practitioner Audits</strong></td>
+                </tr>
+                <tr>
+                  <td>Capstone Projects</td>
+                  <td>Guided Prompts</td>
+                  <td><strong>Production Deployment Reviews</strong></td>
+                </tr>
+                <tr>
+                  <td>Live Office Hours</td>
+                  <td>&mdash;</td>
+                  <td><strong>Weekly Live Video Workshops</strong></td>
+                </tr>
+                <tr>
+                  <td>Verified Mastery Credential</td>
+                  <td>&mdash;</td>
+                  <td><strong>Cryptographically Verifiable Badge</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 8: FINAL IMPACT HERO
+         ======================================================================= -->
+    <section class="final-impact-section" aria-label="Begin Your Journey">
+      <div class="impact-halo" aria-hidden="true"></div>
+      
+      <div class="container impact-container reveal-on-scroll">
+        <span class="impact-pre-tag">THE FRONTIER AWAITS</span>
+        <h2 class="impact-headline">
+          "Your future isn't waiting.<br>
+          <span class="highlight-text">It's yours to build."</span>
+        </h2>
+        <p class="impact-sub">
+          Join over 45,000 thinkers, developers, and visionaries shaping the next frontier of technology.
+        </p>
+        
+        <div class="impact-cta-row">
+          <a href="#courses" class="btn-primary impact-btn">
+            <span>Start Exploring Now</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#learning-paths" class="btn-secondary impact-btn">
+            <span>Explore All Paths &rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       GLOBAL FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <!-- Top Row: Brand & Newsletter -->
+      <div class="footer-top-row">
+        <div class="footer-brand-side">
+          <div class="brand-logo">
+            <div class="logo-emblem">
+              <span class="emblem-core"></span>
+              <span class="emblem-ring"></span>
+            </div>
+            <span class="logo-title">NEXORA</span>
+          </div>
+          <p class="footer-mission">
+            The world is changing. Learn to shape it. NEXORA is an award-grade digital learning universe engineered to empower next-generation builders.
+          </p>
+        </div>
+
+        <!-- Newsletter Subscription Box -->
+        <div class="footer-newsletter-side">
+          <h4 class="newsletter-title">Subscribe to The Frontier Dispatch</h4>
+          <p class="newsletter-desc">Weekly curated engineering deep dives, research papers, and platform updates.</p>
+          
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <input 
+                type="email" 
+                id="newsletter-email" 
+                class="newsletter-input" 
+                placeholder="Enter your email address..." 
+                required 
+                autocomplete="email"
+              >
+              <button type="submit" class="newsletter-submit-btn">
+                <span>Subscribe</span>
+              </button>
+            </div>
+            <span id="newsletter-feedback" class="newsletter-feedback" aria-live="polite"></span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Middle Row: Directory Columns -->
+      <div class="footer-nav-grid">
+        <div class="footer-col">
+          <h5 class="col-heading">Disciplines</h5>
+          <ul>
+            <li><a href="#courses">Artificial Intelligence</a></li>
+            <li><a href="#courses">Web Development</a></li>
+            <li><a href="#courses">Systems &amp; Logic</a></li>
+            <li><a href="#courses">Data Science</a></li>
+            <li><a href="#courses">Cybersecurity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 class="col-heading">Learning Paths</h5>
+          <ul>
+            <li><a href="#learning-paths">Full-Stack Developer</a></li>
+            <li><a href="#learning-paths">AI Pioneer</a></li>
+            <li><a href="#learning-paths">Python for Systems</a></li>
+            <li><a href="#learning-paths">UI/UX Designer</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 class="col-heading">Platform</h5>
+          <ul>
+            <li><a href="#command-center">Command Center</a></li>
+            <li><a href="#difference">Pedagogy</a></li>
+            <li><a href="#membership">Membership &amp; Pricing</a></li>
+            <li><a href="#stories">Student Stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5 class="col-heading">Integrity</h5>
+          <ul>
+            <li><a href="#courses">WCAG Accessibility</a></li>
+            <li><a href="#hero">Terms of Service (Demo)</a></li>
+            <li><a href="#hero">Privacy Architecture</a></li>
+            <li><a href="#hero">Security Whitepaper</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar: Copyright & Back to Top -->
+      <div class="footer-bottom-bar">
+        <div class="footer-copy">
+          &copy; <span id="current-year">2026</span> NEXORA Learning Universe. All digital rights reserved. Frontend Demonstration Experience.
+        </div>
+        <button id="back-to-top-btn" class="back-to-top-btn" type="button" aria-label="Back to top of page">
+          <span>Back to Top &uarr;</span>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS SYSTEM
+       ========================================================================= -->
+
+  <!-- 1. COURSE DETAILS MODAL -->
+  <div id="course-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-course-title" aria-hidden="true">
+    <div class="modal-backdrop" id="course-modal-backdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="course-modal-close" aria-label="Close course details">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-category-badge" id="modal-course-category">DISCIPLINE</div>
+        <h3 class="modal-title" id="modal-course-title">Course Title</h3>
+        <p class="modal-instructor-line">
+          Taught by <span id="modal-course-instructor" class="text-highlight">Instructor</span> &bull; 
+          <span id="modal-course-duration">12 Weeks</span> &bull; 
+          <span id="modal-course-difficulty" class="badge-difficulty">Intermediate</span>
+        </p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 class="modal-subheading">Overview &amp; Objectives</h4>
+          <p id="modal-course-overview" class="modal-text"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-subheading">Curriculum Syllabus</h4>
+          <ul id="modal-course-syllabus" class="modal-checklist"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-subheading">Key Skills &amp; Tools Mastered</h4>
+          <div id="modal-course-tags" class="modal-tags-cloud"></div>
+        </div>
+
+        <div class="modal-footer-action">
+          <div class="modal-pricing-note">
+            <span class="note-price" id="modal-course-price">$129</span>
+            <span class="note-sub">or included with NEXORA Pro</span>
+          </div>
+          <button id="modal-enroll-btn" class="btn-primary" type="button">
+            <span>Enroll in Course (Demonstration)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. DEMO ACTION / FEEDBACK MODAL -->
+  <div id="demo-feedback-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="demo-modal-title" aria-hidden="true">
+    <div class="modal-backdrop" id="demo-modal-backdrop"></div>
+    <div class="modal-container modal-sm">
+      <button class="modal-close-btn" id="demo-modal-close" aria-label="Close dialog">&times;</button>
+      
+      <div class="demo-modal-content">
+        <div class="demo-icon-circle">&#10003;</div>
+        <h3 id="demo-modal-title" class="demo-title">Simulation Acknowledged</h3>
+        <p id="demo-modal-message" class="demo-message">Your selection has been registered in the frontend demonstration environment.</p>
+        
+        <div class="demo-technical-note">
+          <strong>Frontend Architecture:</strong> This action simulates an authenticated transaction. In a production deployment, this coordinates with OAuth SSO and Stripe/Chargebee payment webhooks.
+        </div>
+
+        <div class="demo-action-row">
+          <button id="demo-modal-dismiss" class="btn-primary" type="button">
+            <span>Acknowledge &amp; Return</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
